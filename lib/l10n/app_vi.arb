@@ -1,0 +1,26 @@
+{
+  "greeting": "{timeOfDay, select, morning{Chào buổi sáng} afternoon{Chào buổi chiều} evening{Chào buổi tối} other{Xin chào}}, {userName}!",
+  "@greeting": {
+    "description": "The conventional newborn programmer greeting",
+    "placeholders": {
+      "timeOfDay": {
+        "type": "String",
+        "example": "morning"
+      },
+      "userName": {
+        "type": "String",
+        "example": "Bob"
+      }
+    }
+  },
+  "daysLeft": "{days, plural, =0{Hôm nay là hạn chót} other{Còn {days} ngày}}",
+  "@daysLeft": {
+    "description": "How many days left to do something",
+    "placeholders": {
+      "days": {
+        "type": "int",
+        "format": "compact"
+      }
+    }
+  }
+}
