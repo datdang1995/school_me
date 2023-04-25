@@ -3,6 +3,8 @@ import 'package:flutter/material.dart' hide TimeOfDay;
 import 'package:school_me/infrastructure/core/constants/lorem.dart';
 import 'package:school_me/infrastructure/core/extensions/context_extension.dart';
 
+import '../../gen/assets.gen.dart';
+
 @RoutePage()
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -15,7 +17,7 @@ class HomePage extends StatelessWidget {
       ),
       body: SafeArea(
         child: ListView.separated(
-          itemCount: 100,
+          itemCount: 10,
           padding: const EdgeInsets.symmetric(horizontal: 8),
           separatorBuilder: (context, index) => const SizedBox(height: 8),
           itemBuilder: (context, index) {
@@ -25,6 +27,7 @@ class HomePage extends StatelessWidget {
                 style: context.textTheme.titleMedium,
               ),
               subtitle: Text('FTU', style: context.textTheme.bodySmall),
+              leading: Assets.images.ftuLogo.image(),
               children: [
                 ListTile(
                   title: Text(context.translate?.school_introduction ?? ''),
