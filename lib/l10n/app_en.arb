@@ -1,4 +1,6 @@
 {
     "greeting": "Good {timeOfDay, select, morning{morning} afternoon{afternoon} evening{evening} other{day}}, {userName}!",
-    "daysLeft": "{days, plural, =0{Today is the day} =1{One day left} other{{days} days left}}"
+    "daysLeft": "{days, plural, =0{Today is the day} =1{One day left} other{{days} days left}}",
+    "school_ftu": "Foreign Trade University",
+    "school_introduction": "School Introduction"
 }

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 extension BuildContextExt on BuildContext {
-  TextTheme get theme => Theme.of(this).textTheme;
+  TextTheme get textTheme => Theme.of(this).textTheme;
 
   Size get size => MediaQuery.of(this).size;
+
+  AppLocalizations? get translate => AppLocalizations.of(this);
 }

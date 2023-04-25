@@ -17,6 +17,8 @@ class MyApp extends ConsumerWidget {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       locale: const Locale('vi'),
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
     );
   }
 }
