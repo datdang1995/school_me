@@ -18,7 +18,7 @@ class ValueValidators {
     if (result) {
       return right(password);
     } else {
-      return left(ValueFailure.invalidPassword(failedValue: password));
+      return left(const ValueFailure.invalidPassword());
     }
   }
 }

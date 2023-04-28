@@ -1,23 +1,14 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:school_me/domain/auth/value_objects.dart';
+import 'package:school_me/application/auth/providers/email_provider.dart';
+import 'package:school_me/application/auth/providers/password_provider.dart';
 import 'package:school_me/infrastructure/auth/log_in_request.dart';
 
 part 'log_in_provider.g.dart';
 
 @riverpod
-class LogInProvider extends _$LogInProvider {
-  @override
-  LogInRequest build() {
-    return const LogInRequest();
-  }
-
-  void emailChanged(String email) {
-    final value = Email(email);
-    state = state.copyWith(email: value.isValid ? value.getOrCrash() : null);
-  }
-
-  void passwordChanged(String password) {
-    final value = Password(password);
-    state = state.copyWith(password: value.isValid ? value.getOrCrash() : null);
-  }
+LogInRequest logIn(LogInRef ref) {
+  return LogInRequest(
+    email: ref.watch(emailProvider).value.fold((l) => null, (r) => r),
+    password: ref.watch(passwordProvider).value.fold((l) => null, (r) => r),
+  );
 }

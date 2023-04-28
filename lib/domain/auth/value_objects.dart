@@ -3,24 +3,24 @@ import 'package:school_me/domain/core/value_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:school_me/domain/core/value_object.dart';
 
-class Email extends ValueObject<String> {
+class EmailObject extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  const Email._(this.value);
+  const EmailObject._(this.value);
 
-  factory Email(String email) {
-    return Email._(ValueValidators.email(email));
+  factory EmailObject(String email) {
+    return EmailObject._(ValueValidators.email(email));
   }
 }
 
-class Password extends ValueObject<String> {
+class PasswordObject extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  const Password._(this.value);
+  const PasswordObject._(this.value);
 
-  factory Password(String password) {
-    return Password._(ValueValidators.password(password));
+  factory PasswordObject(String password) {
+    return PasswordObject._(ValueValidators.password(password));
   }
 }
