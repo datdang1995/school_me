@@ -20,5 +20,5 @@ jobs:
           channel: "stable"
           cache: true
       - run: flutter pub get
-      - run: flutter analyze
       - run: flutter pub run build_runner build -d
+      - run: flutter analyze
