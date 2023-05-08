@@ -46,12 +46,22 @@ class AuthPage extends HookConsumerWidget {
                 validator: ref.read(passwordProvider.notifier).validate,
               ),
               const SizedBox(height: 16),
-              TextButton(
-                onPressed: () {
-                  validateMode.value = AutovalidateMode.onUserInteraction;
-                },
-                child: const Text('Sign in'),
-              ),
+              Consumer(builder: (context, ref, child) {
+                final validatorProvider = Provider.autoDispose<bool>((ref) {
+                  final email = ref.watch(emailProvider);
+                  final password = ref.watch(passwordProvider);
+
+                  return email.isValid && password.isValid;
+                });
+                final _ = ref.watch(validatorProvider);
+
+                return TextButton(
+                  onPressed: () {
+                    validateMode.value = AutovalidateMode.always;
+                  },
+                  child: const Text('Sign in'),
+                );
+              }),
             ],
           ),
         ),
